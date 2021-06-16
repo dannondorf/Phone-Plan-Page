@@ -1,0 +1,814 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+header {
+    background-color: rgb(245, 245, 245);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    background-color: inherit;
+}
+
+a.menu-items {
+    text-decoration: none;
+    color: black;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 2rem;
+}
+
+.menu-items {
+    display: flex;
+    align-items: flex-end;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    color: black;
+    font-weight: 900;
+    margin-right: 4rem;
+    padding-bottom: 0.6rem;
+    text-decoration: none;
+}
+
+.phone-icon {
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+.phone-button {
+    display: flex;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #1a561a;
+    align-items: top;
+}
+
+.mobile-phone {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2em;
+    color: #1a561a;
+}
+
+.hamburger {
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.4);
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    padding: 9px;
+}
+
+.toggle {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.links::after {
+    content: "";
+    display: flex;
+    padding-top: 0;
+    width: 0;
+    border-bottom: 4px solid orange;
+    transition: width 0.5s;
+}
+
+.links:hover::after {
+    width: 62%;
+}
+
+.phone-link::after {
+    content: "";
+    display: block;
+    padding-top: 4px;
+    width: 0;
+    border-bottom: 4px solid orange;
+    transition: width 0.5s;
+}
+
+.phone-link:hover::after {
+    width: 100%;
+}
+
+.logo {
+    width: 160px;
+    padding-right: 3rem;
+    padding-bottom: 0.5rem;
+}
+
+/*hero button & animation*/
+.hero {
+    display: flex;
+    justify-content: center;
+    height: 33rem;
+    text-align: left;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.hero-right img {
+    width: 575px;
+    height: 575px;
+    object-fit: cover;
+    object-position: center bottom;
+    flex: 1 0 auto;
+
+    border-radius: 100%;
+}
+
+.hero-left {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: #1a561a;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0rem 5rem 2rem;
+    max-width: 80%;
+}
+
+.hero-button {
+    display: flex;
+    position: absolute;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    font-size: 0.6em;
+    color: black;
+    background-color: transparent;
+    letter-spacing: 0.06em;
+    word-spacing: 0.2em;
+    width: 225px;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 1rem 1rem 1.5rem 1rem;
+    border: 4px solid transparent;
+}
+
+.hero-button::before {
+    content: "";
+    display: flex;
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 0;
+    background: transparent;
+    border: 4px solid transparent;
+}
+
+.hero-button:hover::before {
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+    0% {
+        margin-left: 100%;
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: orange;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50% {
+        margin-left: 100%;
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: orange;
+        border-bottom-color: orange;
+        border-left-color: transparent;
+    }
+
+    100% {
+        margin-left: 0;
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: orange;
+        border-bottom-color: orange;
+        border-left-color: transparent;
+    }
+}
+
+.hero-button::after {
+    content: "";
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 0;
+    background: transparent;
+    border: 4px solid transparent;
+}
+
+.hero-button:hover::after {
+    animation: animates 0.3s linear forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes animates {
+    0% {
+        margin-top: 25%;
+        margin-right: 100%;
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: orange;
+    }
+    5% {
+        margin-top: 0;
+        margin-right: 100%;
+        width: 0;
+        height: 100%;
+        border-top-color: orange;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: orange;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: orange;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: orange;
+    }
+}
+
+/*Plans Toggle*/
+.plans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plans-menu {
+    padding: 7rem 3rem 5rem 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.plans-title {
+    font-family: "Noto Sans TC", sans-serif;
+    color: #1a561a;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin-right: 1rem;
+    font-size: 2.5em;
+}
+
+.plans-button {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1em;
+    border: 3px solid orange;
+    padding: 0.9rem 2rem;
+}
+
+.monthly--on {
+    color: white;
+    background-color: orange;
+}
+
+.monthly--off {
+    color: #1a561a;
+    background-color: rgba(252, 239, 229, 0.89);
+}
+
+.yearly--on {
+    color: white;
+    background-color: orange;
+}
+
+.yearly--off {
+    color: #1a561a;
+    background-color: rgba(252, 239, 229, 0.89);
+}
+
+/*Sub Cards*/
+.plans-cards {
+    display: flex;
+    flex-direction: row;
+    padding: 0 2rem;
+}
+
+.cards {
+    font-family: "Noto Sans TC", sans-serif;
+    color: #1a561a;
+    display: flex;
+    margin: 0rem 1rem 4rem 1.2rem;
+    padding: 3rem 2rem 3rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 10%;
+    box-shadow: 0px 0px 5px 7px rgb(235, 235, 235);
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-heading {
+    font-size: 2em;
+    font-weight: 400;
+    padding: 0 0 0.25em 0;
+}
+
+.card-pricing {
+    font-size: 1.75em;
+    font-weight: 900;
+}
+
+.card-p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.2em;
+    letter-spacing: 0.07em;
+    padding: 1.5rem 1rem 2.5rem 1rem;
+    text-align: center;
+}
+
+.cards-icon {
+    width: 12rem;
+    padding: 1rem;
+}
+
+.cards h3 {
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+
+/*Photo Grid*/
+.gallery {
+    padding: 3.5rem 3.5rem 0rem 3.5rem;
+    z-index: 10;
+}
+.gallery-container {
+    margin-bottom: -20rem;
+    max-width: 1200px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 40% 20% 40%;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.banana {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    overflow: hidden;
+}
+
+.ocra {
+    height: 86%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    overflow: hidden;
+}
+
+.eggs {
+    height: 100%;
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    overflow: hidden;
+}
+
+.coffee {
+    width: 100%;
+    height: 86%;
+    object-fit: cover;
+    object-position: center;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    overflow: hidden;
+}
+
+.cherries {
+    height: 91%;
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    overflow: hidden;
+}
+
+/*Promise/About Us */
+.promise {
+    display: flex;
+    flex-direction: column;
+    font-family: "Noto Sans TC", sans-serif;
+    color: #1a561a;
+    background-color: rgb(245, 245, 245);
+    padding: 7rem 5.5rem 8rem 5.5rem;
+}
+
+.promise-heading {
+    padding: 20rem 0 2rem 0;
+    width: 60%;
+}
+
+.promise-heading h2 {
+    font-size: 1.5em;
+    padding-bottom: 1.5rem;
+}
+
+.promise-heading p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    line-height: 1.5em;
+}
+
+.promise-p {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1em;
+    word-spacing: 0.1em;
+    letter-spacing: 0.03em;
+}
+
+.promise-p a {
+    color: #1a561a;
+}
+
+.promise-p a:hover {
+    color: orange;
+}
+
+.promise-p a:active {
+    color: orange;
+}
+
+/*footer*/
+.container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    color: #1a561a;
+    width: 100%;
+    padding: 2rem;
+}
+
+#social {
+    fill: #05412d;
+    height: 40px;
+    width: 40px;
+    margin-right: 2rem;
+    padding-top: 0;
+}
+
+#social:hover {
+    fill: #ffa500;
+    height: 50px;
+    width: 50px;
+}
+
+@media (max-width: 1000px) {
+   
+    .links:hover::after {
+    width: 82%;
+}
+    
+    .hero-right img {
+        width: 450px;
+        height: 450px;
+    }
+
+    .hero-left {
+        font-size: 2em;
+        line-height: 1.3em;
+    }
+
+    .promise-heading p {
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+
+    .card-heading {
+        font-size: 1.2em;
+    }
+    .card-pricing {
+        font-size: 1em;
+    }
+
+    .cards-icon {
+        width: 8rem;
+        padding: 0.5rem;
+    }
+
+    .main-nav {
+        padding-left: 0.9rem;
+    }
+
+    .menu-items {
+        margin-right: 1.5rem;
+    }
+    .logo {
+        width: 160px;
+        padding-right: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 790px) {
+    nav {
+        padding: 0;
+    }
+
+    .menu-items:hover {
+        border-bottom: 4px solid orange;
+    }
+
+    a.menu-itemse:active {
+        border-bottom: 4px solid orange;
+    }
+
+    a.menu-items:target {
+        border-bottom: 4px solid orange;
+    }
+
+    .clicked {
+        border-bottom: 4px solid orange;
+    }
+
+    .toggle {
+        display: flex;
+    }
+
+    .menu-items {
+        display: none;
+        font-size: 1rem;
+        margin-top: .5rem;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: transparent;
+        padding: 2rem 4rem 0 3rem;
+    }
+
+    .hamburger {
+        margin-bottom: 1rem;
+    }
+
+    .mobile-phone {
+        display: flex;
+    }
+
+    .links {
+        margin-bottom: 1.2rem;
+    }
+
+    .links:hover::after {
+        width: 0%;
+    }
+
+        header {
+        height: 100%;
+        width: 100%;
+        border-radius: 0 0 70% 70%;
+    }
+    .hero {
+        padding-top: 2rem;
+    }
+    .hero-left { 
+        font-size: 2em;
+        text-align: center;
+        position: absolute;
+        padding: 6rem 3rem;  
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero-button {
+        display: none;  
+    }
+    
+    .hero-button-2 {
+        z-index: 10;
+        pointer-events: all;
+        display: flex;  
+         font-family: "Noto Sans TC", sans-serif;
+        font-weight: 700;
+        font-size: 0.6em;
+        color: black;
+        background-color: transparent;
+        letter-spacing: 0.06em;
+        word-spacing: 0.2em;
+        justify-content: center;
+        margin-top: 1rem;
+        padding: 1rem 1rem 1.5rem 1rem;
+        border: 4px solid orange;
+        
+    }
+    
+   
+    .hero-button-2:active {
+        background-color: orange;
+        color: white;
+    }
+
+    .hero-right {
+        opacity: 0.25;
+        
+    }
+
+    .hero-right img {
+        object-fit: none;
+        object-position: 50% 70%;
+        z-index: 0;
+    }
+
+    .plans-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .plans-title {
+        letter-spacing: 0.1rem;
+        /*         margin-right: 1rem; */
+        font-size: 2em;
+    }
+
+    .plans-button {
+        padding: 0.5rem 1.2rem;
+    }
+
+    .plans-cards {
+        flex-direction: column;
+        padding: 0 1.5rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        margin: 0rem 1rem 2rem 1.2rem;
+        padding: 1rem 1rem 2rem 1rem;
+    }
+
+    .card-heading {
+        font-size: 1.75em;
+        padding: 0 0 0.25em 0;
+    }
+
+    .card-pricing {
+        font-size: 1.2em;
+    }
+
+    .card-p {
+        text-align: center;
+        padding: 1rem 0.5rem;
+    }
+
+    .cards-icon {
+        width: 7rem;
+        padding: 1rem;
+    }
+
+    .cards h3 {
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+    .promise {
+        display: none;
+    }
+
+    .phone-button {
+        display: none;
+    }
+
+
+    .plans-menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plans-title {
+        padding: 8rem 0 2rem 0;
+    }
+    .plans-button {
+        width: 120px;
+    }
+    .container-footer {
+        width: 100%;
+        padding: 1rem;
+    }
+    .container-footer p {
+        font-size: 0.8em;
+        width: 70%;
+    }
+
+    #social {
+        fill: #05412d;
+        height: 20px;
+        width: 20px;
+        margin-right: 0.5rem;
+        padding-top: 0;
+    }
+
+    #social:hover {
+        fill: #ffa500;
+        height: 25px;
+        width: 25px;
+    }
+}
+
+@media (max-width: 481px) {
+    .nav {
+        width: 100%;
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    .hamburger {
+        margin-right: 0;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    .main-nav {
+        padding: 1rem 0 0 0;
+    }
+
+    .logo {
+        width: 120px;
+        margin-left: 0;
+        padding-right: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .hero-left {
+        font-size: 1.6em;
+        text-align: center;
+        position: absolute;
+        padding: 6rem 3rem;
+    }
+
+    .plans-title {
+        padding: 6rem 0 2rem 0;
+    }
+
+    .cards-icon {
+        width: 6rem;
+        padding-top: 1rem;
+    }
+}
